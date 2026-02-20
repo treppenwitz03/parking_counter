@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #d9d9d9;
+  --background: #fafafa;
   --foreground: #000000;
 }
 
@@ -10,6 +10,32 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --accent-color: #008080
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Create the utility class */
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out forwards;
+  }
+}
+
+@keyframes blink-green-beige {
+  0%, 100% { fill: #008000; fill-opacity: 1; }
+  50% { fill: #F5F5DC; fill-opacity: 1; }
+}
+
+.blinking-spot {
+  animation: blink-green-beige 1s infinite ease-in-out;
 }
 
 body {
